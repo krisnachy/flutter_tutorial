@@ -21,7 +21,19 @@ class MyApp extends StatelessWidget {
                 color: Colors.lightBlue,
                 width: 150,
                 height: 50,
-                child: const Text("Hello World"))),
+                child: const Text(
+                  "Saya sedang melatih kemampuan flutter saya",
+                  maxLines: 2,
+                  //elipsis jika terpotong memberikan titik titik
+                  //clip benar-benar dipotong
+                  overflow: TextOverflow.ellipsis,
+                  //default bernilai true, kalo false text tidak akan ditaruh ke bawah
+                  softWrap: false,
+                  //mengatur text ditampilkan apakah rata kanan kiri justify dll
+                  textAlign: TextAlign.center,
+                  //style mengatur gaya font
+                  style: TextStyle(color: Colors.white),
+                ))),
       ),
     );
   }
