@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
     // number = number+1;
     //perintah untuk merefresh tampilan karena jika tidak menggunakan setstate maka fungsi sudah berjalan tetapi tampilan belum berubah
     setState(() {
-      number = number+1;
+      number = number + 1;
     });
   }
 
@@ -33,7 +33,11 @@ class _MyAppState extends State<MyApp> {
               // Text("12"),
               Text(number.toString()),
               ElevatedButton(
-                  onPressed: tekanTombol, child: Text('Tambah Bilangan'))
+                  onPressed: tekanTombol,
+                  child: Text(
+                    'Tambah Bilangan',
+                    style: TextStyle(fontSize: 10 + number.toDouble()),
+                  ))
             ],
           ),
         ),
