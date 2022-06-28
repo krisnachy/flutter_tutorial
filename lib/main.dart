@@ -4,19 +4,31 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  void tekanTombol() {}
+
+  @override
   Widget build(BuildContext context) {
-    //Material app adalah widget yg berisi data-data yg diperlukan oleh app yg menggunakan material design
     return MaterialApp(
-      //tampilan awal yang akan ditampilkan oleh material app
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Aplikasi Hello World"),
+        appBar: AppBar(title: Text('Statefull Widget Demo')),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("12"),
+              ElevatedButton(
+                  onPressed: tekanTombol, child: Text('Tambah Bilangan'))
+            ],
+          ),
         ),
-        body: const Center(child: Text("Hello World")),
       ),
     );
   }
