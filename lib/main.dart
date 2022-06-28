@@ -12,7 +12,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  void tekanTombol() {}
+  int number = 0;
+  void tekanTombol() {
+    // number = number+1;
+    //perintah untuk merefresh tampilan karena jika tidak menggunakan setstate maka fungsi sudah berjalan tetapi tampilan belum berubah
+    setState(() {
+      number = number+1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +30,8 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("12"),
+              // Text("12"),
+              Text(number.toString()),
               ElevatedButton(
                   onPressed: tekanTombol, child: Text('Tambah Bilangan'))
             ],
