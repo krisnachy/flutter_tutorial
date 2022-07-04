@@ -14,9 +14,43 @@ class MyApp extends StatelessWidget {
       //tampilan awal yang akan ditampilkan oleh material app
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Aplikasi Hello World"),
+          title: const Text("Flexible Layout"),
         ),
-        body: const Center(child: Text("Hello World")),
+        body: Column(
+          children: [
+            Flexible(
+                flex: 1,
+                child: Row(
+                  children: [
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.red,
+                        )),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.green,
+                        )),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.purple,
+                        )),
+                  ],
+                )),
+            Flexible(
+                flex: 2,
+                child: Container(
+                  color: Colors.blue,
+                )),
+            Flexible(
+                flex: 1,
+                child: Container(
+                  color: Colors.yellow,
+                )),
+          ],
+        ),
       ),
     );
   }
