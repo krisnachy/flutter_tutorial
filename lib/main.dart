@@ -1,22 +1,42 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
+//Animated container sama dengan kontainer tetapi menjadi animasi jika berubah propertinya
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Random random = Random();
+  @override
   Widget build(BuildContext context) {
-    //Material app adalah widget yg berisi data-data yg diperlukan oleh app yg menggunakan material design
     return MaterialApp(
-      //tampilan awal yang akan ditampilkan oleh material app
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Aplikasi Hello World"),
+          title: Text('Latihan animated Container'),
         ),
-        body: const Center(child: Text("Hello World")),
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {});
+            },
+            child: AnimatedContainer(
+              color: Color.fromARGB(255, random.nextInt(256),
+                  random.nextInt(256), random.nextInt(256)),
+              duration: Duration(seconds: 1),
+              width: 50.0 + random.nextInt(101),
+              height: 50.0 + random.nextInt(101),
+            ),
+          ),
+        ),
       ),
     );
   }
