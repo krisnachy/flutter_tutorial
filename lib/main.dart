@@ -4,19 +4,41 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int counter = 0;
+
+  @override
   Widget build(BuildContext context) {
-    //Material app adalah widget yg berisi data-data yg diperlukan oleh app yg menggunakan material design
     return MaterialApp(
-      //tampilan awal yang akan ditampilkan oleh material app
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Aplikasi Hello World"),
+          title: Text('Timer'),
         ),
-        body: const Center(child: Text("Hello World")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                counter.toString(),
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(),
+              RaisedButton(onPressed: () {},
+              child: Text('Ubah warna 5 detik kemudian'),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
