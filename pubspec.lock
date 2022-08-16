@@ -84,7 +84,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_bloc:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_bloc
       url: "https://pub.dartlang.org"
@@ -103,7 +103,7 @@ packages:
     source: sdk
     version: "0.0.0"
   hydrated_bloc:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: hydrated_bloc
       url: "https://pub.dartlang.org"
