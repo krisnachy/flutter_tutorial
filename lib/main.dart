@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_yt/ui/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Material app adalah widget yg berisi data-data yg diperlukan oleh app yg menggunakan material design
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       //tampilan awal yang akan ditampilkan oleh material app
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Aplikasi Hello World"),
-        ),
-        body: const Center(child: Text("Hello World")),
-      ),
+      home: MainPage(),
     );
   }
 }
